@@ -7,6 +7,7 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import StudentList from './components/StudentList';
+import EmployeeDirectory from './components/EmployeeDirectory';
 import './App.css';
 
 export default function App() {
@@ -14,7 +15,7 @@ export default function App() {
 
   return (
     <div className="app-container">
-      {/* Assignment Switcher Header */}
+      {/* Top Assignment Navigation Bar */}
       <div className="assignment-bar">
         <span className="hub-title">React Lab Submissions:</span>
         <button 
@@ -29,9 +30,15 @@ export default function App() {
         >
           Assignment 2: Student Portal
         </button>
+        <button 
+          className={activeTab === 'assignment3' ? 'tab-btn active' : 'tab-btn'} 
+          onClick={() => setActiveTab('assignment3')}
+        >
+          Assignment 3: Employee Directory
+        </button>
       </div>
 
-      {/* Conditional Rendering */}
+      {/* Assignment 1 View */}
       {activeTab === 'assignment1' && (
         <>
           <Navbar />
@@ -46,6 +53,7 @@ export default function App() {
         </>
       )}
 
+      {/* Assignment 2 View */}
       {activeTab === 'assignment2' && (
         <>
           <header className="hero" style={{ padding: '2.5rem 1rem' }}>
@@ -54,6 +62,20 @@ export default function App() {
           </header>
           <main>
             <StudentList />
+          </main>
+          <Footer />
+        </>
+      )}
+
+      {/* Assignment 3 View */}
+      {activeTab === 'assignment3' && (
+        <>
+          <header className="hero" style={{ padding: '2.5rem 1rem' }}>
+            <h1>Assignment 3: Farm Employee Directory</h1>
+            <p>State, Events, Conditional Rendering & CRUD Operations</p>
+          </header>
+          <main>
+            <EmployeeDirectory />
           </main>
           <Footer />
         </>
