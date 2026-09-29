@@ -10,6 +10,7 @@ import StudentList from './components/StudentList';
 import EmployeeDirectory from './components/EmployeeDirectory';
 import WeatherDashboard from './components/WeatherDashboard';
 import ShoppingCart from './components/ShoppingCart';
+import TaskManager from './components/TaskManager';
 import './App.css';
 
 export default function App() {
@@ -49,6 +50,12 @@ export default function App() {
           onClick={() => setActiveTab('assignment5')}
         >
           Assignment 5: Shopping Cart
+        </button>
+        <button 
+          className={activeTab === 'assignment6' ? 'tab-btn active' : 'tab-btn'} 
+          onClick={() => setActiveTab('assignment6')}
+        >
+          Assignment 6: Task Manager
         </button>
       </div>
 
@@ -118,6 +125,20 @@ export default function App() {
           </header>
           <main>
             <ShoppingCart />
+          </main>
+          <Footer />
+        </>
+      )}
+
+      {/* Assignment 6 View */}
+      {activeTab === 'assignment6' && (
+        <>
+          <header className="hero" style={{ padding: '2.5rem 1rem' }}>
+            <h1>Assignment 6: Task Manager</h1>
+            <p>CRUD Operations, Priority Filtering & LocalStorage Persistence</p>
+          </header>
+          <main>
+            <TaskManager />
           </main>
           <Footer />
         </>
