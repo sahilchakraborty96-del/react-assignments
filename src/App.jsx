@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import StudentList from './components/StudentList';
 import EmployeeDirectory from './components/EmployeeDirectory';
+import WeatherDashboard from './components/WeatherDashboard';
 import './App.css';
 
 export default function App() {
@@ -35,6 +36,12 @@ export default function App() {
           onClick={() => setActiveTab('assignment3')}
         >
           Assignment 3: Employee Directory
+        </button>
+        <button 
+          className={activeTab === 'assignment4' ? 'tab-btn active' : 'tab-btn'} 
+          onClick={() => setActiveTab('assignment4')}
+        >
+          Assignment 4: Weather Dashboard
         </button>
       </div>
 
@@ -76,6 +83,20 @@ export default function App() {
           </header>
           <main>
             <EmployeeDirectory />
+          </main>
+          <Footer />
+        </>
+      )}
+
+      {/* Assignment 4 View */}
+      {activeTab === 'assignment4' && (
+        <>
+          <header className="hero" style={{ padding: '2.5rem 1rem' }}>
+            <h1>Assignment 4: Weather Dashboard</h1>
+            <p>API Integration, useEffect Hook & Asynchronous Data Fetching</p>
+          </header>
+          <main>
+            <WeatherDashboard />
           </main>
           <Footer />
         </>
