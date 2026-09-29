@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import StudentList from './components/StudentList';
 import EmployeeDirectory from './components/EmployeeDirectory';
 import WeatherDashboard from './components/WeatherDashboard';
+import ShoppingCart from './components/ShoppingCart';
 import './App.css';
 
 export default function App() {
@@ -42,6 +43,12 @@ export default function App() {
           onClick={() => setActiveTab('assignment4')}
         >
           Assignment 4: Weather Dashboard
+        </button>
+        <button 
+          className={activeTab === 'assignment5' ? 'tab-btn active' : 'tab-btn'} 
+          onClick={() => setActiveTab('assignment5')}
+        >
+          Assignment 5: Shopping Cart
         </button>
       </div>
 
@@ -97,6 +104,20 @@ export default function App() {
           </header>
           <main>
             <WeatherDashboard />
+          </main>
+          <Footer />
+        </>
+      )}
+
+      {/* Assignment 5 View */}
+      {activeTab === 'assignment5' && (
+        <>
+          <header className="hero" style={{ padding: '2.5rem 1rem' }}>
+            <h1>Assignment 5: E-Commerce Shopping Cart</h1>
+            <p>Global State Management via useContext and useReducer Hooks</p>
+          </header>
+          <main>
+            <ShoppingCart />
           </main>
           <Footer />
         </>
